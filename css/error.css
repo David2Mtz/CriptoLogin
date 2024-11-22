@@ -1,0 +1,35 @@
+.contErrorImg{
+    height: 10rem;
+    background-image: url(../inimgs/petError.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.contSuccesImg{
+    height: 10rem;
+    background-image: url(../inimgs/pest.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+@media (min-width: 576px) {
+    .imgPetError{
+        width: 100%;
+    }
+}
+
+.btn-secondary{
+    background-color: #BD6085;
+    border: none;    
+}
+.btn-secondary:hover{
+    background-color: #A13C64;
+}
+
+.textError {
+    font-size: 1.5rem; /* Ajusta el tamaño de fuente */
+    color: #000; /* Opcional: Cambia el color si deseas */
+}

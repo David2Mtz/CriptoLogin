@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospedaje en Ciudad de México</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY0wzQDOjgf_KCbiat_rDUzQi_g_v7A3s&libraries=places"></script>
+    <style>
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #results {
+            max-height: 20vh;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sitios de Hospedaje en Ciudad de México</h1>
+    <div id="map"></div>
+    <div id="results"></div>
+
+    <script>
+        let map;
+
+        function initMap() {
+            // Coordenadas del centro de Ciudad de México
+            const cdmx = { lat: 19.432608, lng: -99.133209 };
+
+            // Inicializa el mapa
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: cdmx,
+                zoom: 14,
+            });
+
+            // Llama a la función para buscar hospedajes
+            searchLodging(cdmx);
+        }
+
+        function searchLodging(location) {
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+                location: location,
+                radius: 5000, // Radio de búsqueda en metros
+                type: "lodging", // Tipo de lugar: hospedaje
+            };
+
+            // Realiza la búsqueda
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    displayResults(results);
+                } else {
+                    console.error("Error al buscar lugares:", status);
+                }
+            });
+        }
+
+        function displayResults(places) {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Limpia los resultados anteriores
+
+            places.forEach((place) => {
+                // Añade marcador al mapa
+                const marker = new google.maps.Marker({
+                    position: place.geometry.location,
+                    map: map,
+                    title: place.name,
+                });
+
+                // Muestra información básica en la lista de resultados
+                const placeInfo = document.createElement("div");
+                placeInfo.innerHTML = `
+                    <strong>${place.name}</strong><br>
+                    Dirección: ${place.vicinity || "N/A"}<br>
+                    Calificación: ${place.rating || "Sin calificación"} (${place.user_ratings_total || 0} reseñas)
+                `;
+                placeInfo.style.marginBottom = "10px";
+                resultsDiv.appendChild(placeInfo);
+            });
+        }
+
+        // Inicializa el mapa cuando se carga la página
+        window.onload = initMap;
+    </script>
+</body>
+</html>
