@@ -1,102 +1,110 @@
 <?php
+require '../PHPMailer/Exception.php';
+require '../PHPMailer/PHPMailer.php';
+require '../PHPMailer/SMTP.php';
+// Configuración de la base de datos
+include "../../BasedeDatos/php/Conexion_base_datos.php";
+
 session_start(); // Iniciar la sesión al comienzo del archivo
 header('Content-Type: application/json');
 
-include "../../BasedeDatos/php/Conexion_base_datos.php"; // Verifica que la ruta sea correcta
-require_once '../../sendgrid-php/sendgrid-php.php'; //carpeta con los archivos necesarios para la api
-use SendGrid\Mail\Mail;
-use SendGrid\Mail\Attachment;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+    $usuario = $_POST['usuario'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $pais = $_POST['country'];
-    $num_cel = $_POST['phone'];
-    $fecha_nacimiento = $_POST['birthdate'];
-    $genero = $_POST['gender'];
-    $biografia = ' ';
+    
 
     // Generar el token de verificación
     $token = bin2hex(random_bytes(16));
 
     // Consulta para insertar al nuevo usuario
-    $sql_insert = "INSERT INTO usuario (Nombre, Apellidos, email, password, Biografia, Pais, NumCel, Nacimiento, Genero, fec_creac, token, verificado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, 0)";
+    $sql_insert = "INSERT INTO usuario (Usuario,Correo, Password, Fec_Creac, Token, Valido) VALUES (?, ?, ?, NOW(), ?, 0)";
 
-    if ($conn && ($stmt_insert = $conn->prepare($sql_insert))) {
-        $stmt_insert->bind_param('ssssssssss', $nombre, $apellido, $email, $password, $biografia, $pais, $num_cel, $fecha_nacimiento, $genero, $token);
-
+   
+    if ($stmt_insert = $conn->prepare($sql_insert)) {
+        $stmt_insert->bind_param('ssss', $usuario, $email, $password, $token);
+        
         if ($stmt_insert->execute()) {
             $_SESSION['email'] = $email;
-
+            $_SESSION['usuario'] = $usuario;
             // Enviar correo de verificación
-            $verificationUrl = "http://localhost/ADS_Turismo404/inicio_sesion/php/verificar.php?token=$token";
-            $mail = new Mail();
-            $mail->setFrom("t_notion@protonmail.com", "viajeros404");
-            $mail->setSubject("Verificación de cuenta - Viajeros404");
-            $mail->addTo($email, "$nombre $apellido");
+            // Crear una instancia de PHPMailer
+            $mail = new PHPMailer(true);
 
-            // Cargar las imágenes en Base64
-            $headerImage = base64_encode(file_get_contents("C:/xampp/htdocs/ADS_Turismo404/inimgs/encabezadocorreo.png"));
-            $footerImage = base64_encode(file_get_contents("C:/xampp/htdocs/ADS_Turismo404/inimgs/piecorreo.png"));
-
-            // Añadir contenido HTML con imágenes embebidas
-            $mail->addContent(
-                "text/html",
-                "
-                <div style='text-align: center; font-family: Arial, sans-serif;'>
-                    <img src='cid:headerImage' alt='Encabezado' style='width: 100%; max-width: 100%; height: auto;' />
-                    <p style='font-size: 16px; color: #333; margin: 20px 0;'>
-                        <strong>Gracias por registrarte en nuestra plataforma. Para completar el proceso de verificación de tu cuenta, haz clic en el siguiente enlace:</strong>
-                    </p>
-                    <a href='$verificationUrl' 
-                       style='display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #a13c64; text-decoration: none; border-radius: 5px;'>
-                        Verificar cuenta
-                    </a>
-                    
-                    <p style='font-size: 16px; color: #333; margin: 20px 0;'>Si no realizaste esta solicitud, puedes ignorar este mensaje. Si necesitas ayuda, no dudes en contactarnos.</p>
-                <p style='font-size: 16px; color: #333; margin: 20px 0;'> Atentamente,<br><strong>El equipo de soporte de ADS Turismo404</strong></p>
-                    <br><br>
-                    <img src='cid:footerImage' alt='Pie de correo' style='width: 100%; max-width: 100%; height: auto;' />
-                </div>
-                "
-            );
-            
-
-            // Adjuntar imágenes con CID
-            $mail->addAttachment(
-                $headerImage,
-                "image/png",
-                "encabezadocorreo.png",
-                "inline",
-                "headerImage"
-            );
-
-            $mail->addAttachment(
-                $footerImage,
-                "image/png",
-                "piecorreo.png",
-                "inline",
-                "footerImage"
-            );
-
-            $sendgrid = new \SendGrid('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');
             try {
-                $response = $sendgrid->send($mail);
-                echo json_encode(["success" => true, "message" => "Usuario registrado correctamente. Verifica tu correo para activar la cuenta."]);
-            } catch (Exception $e) {
-                echo json_encode(["error" => "Error al enviar el correo de verificación: " . $e->getMessage()]);
-            }
+                // Configuración del servidor SMTP
+                $mail->CharSet = 'UTF-8';
+                $mail->SMTPDebug = 0; // Desactivar la salida de depuración
+                $mail->isSMTP(); // Enviar usando SMTP
+                $mail->Host = 'smtp.gmail.com'; // Servidor SMTP
+                $mail->SMTPAuth = true; // Activar autenticación SMTP
+                $mail->Username = 'Turismo404.adm@gmail.com'; // Nombre de usuario SMTP
+                $mail->Password = 'owsi bxzy nomp dgrp'; // Contraseña específica de aplicación
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Habilitar encriptación TLS implícita
+                $mail->Port = 465; // Puerto TCP para conectar
 
-            exit();
+                // Destinatarios
+                $mail->setFrom('Tusimo404.adm@gmail.com', 'Administrador');
+                $mail->addAddress($email, 'Turista'); // Destinatario
+
+                // Contenido del correo
+                $mail->isHTML(true); // Formato HTML
+                $mail->Subject = 'Verificacion de correo';
+                
+                // Ruta de las imágenes
+                $imageHeaderPath = '../../inimgs/encabezadocorreo.png';
+                $imageFooterPath = '../../inimgs/piecorreo.png';
+
+                // Adjuntar las imágenes al correo
+                $mail->addEmbeddedImage($imageHeaderPath, 'encabezado_cid');
+                $mail->addEmbeddedImage($imageFooterPath, 'pie_cid');
+
+                // Cuerpo del correo
+                $mail->Body = '
+                <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; text-align: center; margin: 0; padding: 0;">
+                <!-- Imagen del encabezado -->
+                <div style="margin-bottom: 20px;">
+                <img src="cid:encabezado_cid" alt="Encabezado del correo" style="width: 100%; max-width: 100%; height: auto; display: block;">
+                </div>
+        
+                <!-- Texto del correo -->
+                <p>Estimado/a usuario/a,</p>
+                <p>Hemos recibido una solicitud para concluir el proceso de registro a la pagina Turismo404  te invitamos a hacer clic en el siguiente enlace:</p>
+                <p style="margin: 20px 0;">
+                <a href="' . $token . '" 
+                style="display: inline-block; padding: 10px 20px; color: #fff; background-color: #a13c64; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                VerificarCorreo
+                </a>
+                </p>
+                <p>Si no has realizado esta solicitud, puedes ignorar este mensaje. La seguridad de tu cuenta es nuestra prioridad, por lo que te recomendamos no compartir este enlace con nadie.</p>
+                <p>Atentamente,<br><strong>El equipo de soporte de ADS Turismo404</strong></p>
+        
+                <!-- Imagen del pie -->
+                <div style="margin-top: 20px;">
+                <img src="cid:pie_cid" alt="Pie del correo" style="width: 100%; max-width: 100%; height: auto; display: block;">
+                </div>
+                </div>';
+
+                $mail->AltBody = 'Este es el cuerpo del correo en texto plano para clientes que no soportan HTML';
+
+                $mail->send();
+                echo json_encode(["message" => "Hemos enviado un correo a la dirección proporcionada. Por favor, revisa los pasos a seguir."]);
+            } catch (Exception $e) {
+                echo json_encode(["error" => "El correo no pudo ser enviado. Error: " . $mail->ErrorInfo]);
+            }
         } else {
             echo json_encode(["error" => "Error al registrar usuario, por favor, verifique los datos ingresados."]);
         }
         
         $stmt_insert->close();
     } else {
-        echo json_encode(["error" => "Ocurrió un error inesperado. Inténtelo de nuevo más tarde."]);
+        echo json_encode(["error" => "Ocurrió un error inesperado. Inténtelo de nuevo más tarde." ]);
     }
 
     $conn->close();

@@ -3,8 +3,8 @@
 // Conectar a la base de datos
 $servername = 'localhost'; 
 $username = 'root'; 
-$password = 'root';  //cambie la contraseña para conectarme a mi xampp
-$dbname = 'turismo404';
+$password = '12345678';  //cambie la contraseña para conectarme a mi xampp
+$dbname = 'criptografia';
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,6 +12,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
+}else{
+    //echo "Conexion correcta";
 }
 
 ?>

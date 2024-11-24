@@ -47,18 +47,14 @@ $client->addScope("profile");
             </div>
 
             <div class="login-form-column col-md-6 d-flex justify-content-center align-items-center">
-                <form class="login-form w-100" action="../php/signup.php" method="POST">
+                <form id="FormRegistro" class="login-form w-100"  method="POST">
                     <div class="iniciarseesion mb-3 text-center"> Regístrate </div>
+                    
                     <div class="row g-3 mb-3 flex-row">
                         <div class="flex-item">
-                            <label for="nombre" class="form-label">Nombre(s)*:</label>
-                            <input type="text" name="nombre" id="nombre" class="form-input form-control" placeholder="Ingresa tu nombre">
-                            <small id="nombreError" class="form-label text-danger" style="display: none;"></small>
-                        </div>
-                        <div class="flex-item">
-                            <label for="apellido" class="form-label">Apellido(s)*:</label>
-                            <input type="text" name="apellido" id="apellido" class="form-input form-control" placeholder="Ingresa tu apellido">
-                            <small id="apellidoError" class="form-label text-danger" style="display: none;"></small>
+                            <label for="usuario" class="form-label">Usuario*:</label>
+                            <input type="text" name="usuario" id="usuario" class="form-input form-control" placeholder="Ingresa un nombre de usuario">
+                            <small id="usuarioError" class="form-label text-danger" style="display: none;"></small>
                         </div>
                     </div>
                     <div class="row g-3 mb-3 flex-row">
@@ -81,54 +77,7 @@ $client->addScope("profile");
                         </div>
                     </div>
 
-                    <!-- País, código de marcación, y número de teléfono -->
-                    <div class="row g-3 mb-3 flex-row">
-                        <div class="flex-item">
-                            <label for="selectPais" class="form-label">País:</label>
-                            <div class="d-flex align-items-center">
-                                <img id="flagIcon" src="" alt="Bandera" style="width: 25px; height: 18px; margin-right: 5px; display: none;">
-                                <select id="selectPais" name="country" class="form-input form-control"></select>
-                                <small id="paisError" class="form-label text-danger" style="display: none;"></small>
-                            </div>
-                        </div>
-                        <div class="flex-item">
-                            <label for="lada" class="form-label">Código de marcación:</label>
-                            <input type="text" id="lada" name="lada" class="form-input form-control" placeholder="Código lada" readonly>
-                        </div>
-                        <div class="flex-item">
-                            <label for="phone" class="form-label">Número telefónico:</label>
-                            <input type="tel" id="phone" name="phone" class="form-input form-control" placeholder="Ingresa el número telefónico" pattern="\d{10}" maxlength="10">
-                            <small id="phoneError" class="form-label text-danger" style="display: none;">Número de teléfono no válido</small>
-                        </div>
-                    </div>
                     
-
-                    <!-- Fecha de nacimiento y género -->
-                    <div class="row g-3 mb-3 flex-row">
-                        <div class="flex-item">
-                            <label for="birthdate" class="form-label">Fecha de nacimiento*:</label>
-                            <input type="date" name="birthdate" id="birthdate" class="form-input form-control">
-                            <small id="birthdateError" class="form-label text-danger" style="display: none;"></small>
-                        </div>
-                        <div class="flex-item">
-                            <label for="gender" class="form-label">Género:</label>
-                            <select name="gender" id="gender" class="form-input form-control">
-                                <option value="">Selecciona tu género</option>
-                                <option value="femenino">Femenino</option>
-                                <option value="masculino">Masculino</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                            <small id="genderError" class="form-label text-danger" style="display: none;"></small>
-                        </div>
-                    </div>
-                    <div class="form-label my-3 mb-3">O regístrate con: </div>
-                    <div class="registrate">
-                    <?php echo "<a href='" . $client->createAuthUrl() . "' class='google-login-button'>"; ?>
-                        <i class="fa-brands fa-google" style="color: #A13C64; font-size: 30px;"></i>
-                    </a>
-                    <span class="or-divider ml-2"></span>
-                    </div>
-                    <br>
                 <!-- Botón de envío original -->
                 <button type="submit" class="login-button btn btn-primary w-100">Registrar</button>
                 </form>
