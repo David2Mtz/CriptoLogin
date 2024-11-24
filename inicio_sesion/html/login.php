@@ -31,12 +31,12 @@ $client->addScope("profile");
       <section class="container-fluid login-container d-flex flex-column flex-md-row p-0">
         <div class="col-md-6 d-flex justify-content-center align-items-center p-0 m-0">
 
-            <form action="../php/login1.php" method="POST" class="login-form w-100 h-100 " autocomplete="off">
+            <form id="FormLogin"  method="POST" class="login-form w-100 h-100 " autocomplete="off">
               <div class="text-center iniciarseesion mb-5">Iniciar Sesión</div>
           
               <div class="form-group w-100">
-                  <label for="email" class="form-label">Correo electrónico</label>
-                  <input type="email" id="email" class="form-control form-input w-100" placeholder="Ingresa tu correo aquí" required>
+                  <label for="usuario" class="form-label">Usuario</label>
+                  <input type="text" id="usuario" class="form-control form-input w-100" placeholder="Ingresa tu correo aquí" required>
               </div>
           
               <div class="form-group w-100 mb-2">

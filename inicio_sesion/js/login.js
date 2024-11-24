@@ -22,18 +22,18 @@ $(document).ready(()=>{
             $(this).removeClass("fa-eye-slash").addClass("fa-eye"); // Muestra el ojo abierto
         }
     });
-    $(".login-form").on("submit", function (e) {
+    $("#FormLogin").on("submit", function (e) {
         e.preventDefault(); // Evita el envío normal del formulario
 
         // Obtiene los datos del formulario
-        const email = $("#email").val();
+        const usuario = $("#usuario").val();
         const password = $("#password").val();
 
         // Realiza la solicitud AJAX
         $.ajax({
             type: "POST",
             url: "../php/login1.php",
-            data: { email: email, password: password },
+            data: { usuario: usuario, password: password },
             dataType: "json",
             success: function (response) {
                 if (response.error) {
@@ -47,7 +47,7 @@ $(document).ready(()=>{
                     window.location.href = "../../index.php"; // Redirige si no hay error
                 }
             },
-            error: function () {
+            error: function (xhr, status, error) {
                 //Pueden usar la funcion de Swal.fire para probar sus errores solo no olviden volver a comentar jaja
                 //Swal.fire({
                 //    icon: "error",
@@ -55,6 +55,10 @@ $(document).ready(()=>{
                 //    text: "Ocurrió un error inesperado. Inténtelo de nuevo más tarde.",
                 //});
                 showErrorModal("Ocurrió un error inesperado. Inténtelo de nuevo más tarde."); //envia el mensaje de error al modal por defecto
+                console.error("Estado:", status);
+                console.error("Error:", error);
+                console.error("Respuesta del servidor:", xhr.responseText);
+                
             },
         });
     });

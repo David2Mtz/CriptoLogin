@@ -21,7 +21,7 @@ $nombre_usuario = "";
 $email = $_SESSION['email'];
 
 // Preparar y ejecutar la consulta para obtener el nombre
-$stmt = $conn->prepare("SELECT nombre FROM usuario WHERE email = ?");
+$stmt = $conn->prepare("SELECT Usuario FROM usuario WHERE Correo = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $stmt->bind_result($nombre_usuario);
