@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p>Estimado/a usuario/a,</p>
                 <p>Hemos recibido una solicitud para concluir el proceso de registro a la pagina Turismo404  te invitamos a hacer clic en el siguiente enlace:</p>
                 <p style="margin: 20px 0;">
-                <a href="' . $token . '" 
+                <a href="http://localhost/CriptoLogin/inicio_sesion/html/CorreoVerificado.php?token=' . $token . '" 
                 style="display: inline-block; padding: 10px 20px; color: #fff; background-color: #a13c64; text-decoration: none; border-radius: 5px; font-weight: bold;">
                 VerificarCorreo
                 </a>
