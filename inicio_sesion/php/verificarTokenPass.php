@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Mexico_City'); // Ajustar la zona horaria
 // Configuración de la base de datos
 include "../../BasedeDatos/php/Conexion_base_datos.php";
 session_start();
@@ -7,7 +8,7 @@ header("Content-Type: application/json"); // Configura el encabezado para JSON
 // Verificación del token en la solicitud GET
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
-    $sql = "SELECT idUsuario, token_password_expiracion FROM usuario WHERE token_password = ?";
+    $sql = "SELECT idUsuario, Token_Password_Expiracion FROM usuario WHERE Token_Password = ?";
     $stmt = $conn->prepare($sql);
     
     if ($stmt === false) {
@@ -24,7 +25,7 @@ if (isset($_GET['token'])) {
             $row = $result->fetch_assoc();
             $current_time = date('Y-m-d H:i:s');
 
-            if ($current_time < $row['token_password_expiracion']) {
+            if ($current_time < $row['Token_Password_Expiracion']) {
                 $_SESSION['user_id'] = $row['idUsuario'];
                 echo json_encode(["message" => "Token válido. Procede a restablecer la contraseña."]);
             } else {

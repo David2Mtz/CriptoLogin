@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Mexico_City'); // Ajustar la zona horaria
 // Configuración de la base de datos
 include "../../BasedeDatos/php/Conexion_base_datos.php";
 session_start();

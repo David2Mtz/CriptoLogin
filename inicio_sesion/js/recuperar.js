@@ -23,13 +23,13 @@ $(document).ready(() => {
         showLoadingModal();
         
         // Obtiene los datos del formulario
-        const email = $("#email").val();
+        const usuario = $("#usuario").val();
 
         // Realiza la solicitud AJAX
         $.ajax({
             type: "POST",
             url: "../php/recuperar_contrasena.php",
-            data: { email: email },
+            data: { usuario: usuario },
             dataType: "json",
             success: function (response) {
                 if (response.error) {

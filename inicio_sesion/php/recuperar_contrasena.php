@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Mexico_City'); // Ajustar la zona horaria
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -16,14 +16,14 @@ header("Content-Type: application/json"); // Configura el encabezado para JSON
 // Comprobar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener el correo electrónico del formulario
-    $email = $_POST['email'];
+    $usuario = $_POST['usuario'];
 
     // Verificar si el correo electrónico existe en la base de datos
-    $sql = "SELECT nombre, idUsuario FROM usuario WHERE email = ?";
+    $sql = "SELECT idUsuario,Correo FROM usuario WHERE Usuario = ?";
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
-        $stmt->bind_param("s", $email);
+        $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -31,17 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Obtener el id y nombre de usuario
             $row = $result->fetch_assoc();
             $userId = $row['idUsuario'];
+            $email = $row['Correo'];
             $_SESSION['user_id'] = $userId;
             // Generar el token y configurar la expiración
             $token = bin2hex(random_bytes(16)); // Genera un token aleatorio
             $expiracion = date('Y-m-d H:i:s', strtotime('+1 hour')); // Configura la expiración para 1 hora después
 
             // Guardar el token y la expiración en la base de datos
-            $sql = "UPDATE usuario SET token_password = ?, token_password_expiracion = ? WHERE email= ?";
+            $sql = "UPDATE usuario SET Token_Password = ?, Token_Password_Expiracion = ? WHERE Usuario= ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sss", $token, $expiracion, $email);
+            $stmt->bind_param("sss", $token, $expiracion, $usuario);
             $stmt->execute();
-        
+            
+            // Extraer la primera letra y ocultar el resto del correo
+            $PrimeraLetra = $email[0]; // Primera letra del correo
             // Crear una instancia de PHPMailer
             $mail = new PHPMailer(true);
 
@@ -85,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Estimado/a usuario/a,</p>
                 <p>Hemos recibido una solicitud para restablecer la contraseña asociada a tu cuenta. Para proceder con este cambio, te invitamos a hacer clic en el siguiente enlace:</p>
                 <p style="margin: 20px 0;">
-                <a href="http://localhost/ADS_Turismo404/inicio_sesion/html/nuevaContraseña.html?token=' . $token . '" 
+                <a href="http://localhost/CriptoLogin/inicio_sesion/html/verificarTokenPass.html?token=' . $token . '" 
                 style="display: inline-block; padding: 10px 20px; color: #fff; background-color: #a13c64; text-decoration: none; border-radius: 5px; font-weight: bold;">
                 Restablecer Contraseña
                 </a>
@@ -102,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->AltBody = 'Este es el cuerpo del correo en texto plano para clientes que no soportan HTML';
 
                 $mail->send();
-                echo json_encode(["message" => "Hemos enviado un correo a la dirección proporcionada. Por favor, revisa los pasos a seguir."]);
+                echo json_encode(["message" => "Hemos enviado un correo a la dirección ' .$PrimeraLetra. '***@***.com, asociado al nombre de usuario ingresado.Por favor, revisa los pasos a seguir."]);
             } catch (Exception $e) {
                 echo json_encode(["error" => "El correo no pudo ser enviado. Error: " . $mail->ErrorInfo]);
             }

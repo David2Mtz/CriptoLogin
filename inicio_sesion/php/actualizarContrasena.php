@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Mexico_City'); // Ajustar la zona horaria
 // Configuración de la base de datos
 include "../../BasedeDatos/php/Conexion_base_datos.php";
 session_start();
@@ -15,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Actualizar la contraseña en la base de datos
-        $sql = "UPDATE usuario SET password = ?, token_password = NULL, token_password_expiracion = NULL WHERE idUsuario = ?";
+        $sql = "UPDATE usuario SET Password = ?, Token_Password = NULL, Token_Password_Expiracion = NULL WHERE idUsuario = ?";
         $stmt = $conn->prepare($sql);
         
         if ($stmt === false) {
