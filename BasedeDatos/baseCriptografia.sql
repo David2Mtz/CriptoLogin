@@ -15,3 +15,9 @@ ALTER TABLE `usuario` ADD `Token` VARCHAR(16) NOT NULL AFTER `Fec_Creac`;
 ALTER TABLE `usuario` ADD `Valido` INT NOT NULL AFTER `Token`;
 
 ALTER TABLE `usuario` ADD `Token_Password` VARCHAR(64) NULL DEFAULT NULL AFTER `Valido`, ADD `Fec_Creac_Password` DATETIME NULL DEFAULT NULL AFTER `Token_Password`, ADD `Token_Password_Expiracion` DATETIME NULL DEFAULT NULL AFTER `Fec_Creac_Password`;
+
+
+
+
+
+
