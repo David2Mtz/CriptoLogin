@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         // Verificar la contraseña
-        if (password_verify($password, $stored_password)) {
+        if ($password == $stored_password) {
             
             //Verificar que el usuario haya concretado la verificacion con su correo.
             $stmt = $conn->prepare("SELECT Valido FROM usuario WHERE usuario= ?");

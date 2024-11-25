@@ -64,13 +64,15 @@ $(document).ready(() => {
         
         // Validación de formulario antes de enviarlo
         .onSuccess((event) => {
+            console.log("Boton");
             event.preventDefault(); // Evita el envío estándar del formulario
-
+            const password = $("#password").val();
+            const hashedPassword = CryptoJS.SHA256(password).toString(); //Realizamos el SH2
             // Realiza una petición AJAX para enviar el formulario a 'editarperfil.php'
             $.ajax({
                 url: '../php/actualizarContrasena.php',
                 type: 'POST',
-                data: $('#PasswordForm').serialize(), // Envía los datos del formulario serializados
+                data: {password: hashedPassword }, // Envía los datos del formulario serializados
                 success: function (response) {
                     if (response.error) {
                         showErrorModal(response.error); // Envía el mensaje de error al modal

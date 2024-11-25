@@ -97,19 +97,21 @@ $(document).ready(function() {
             showErrorModal("Ocurrió un error inesperado. Corrige los errores en el formulario.");
             return;
         }
-
-        const password = $("#password").val();
+        const usuario = $("#usuario").val();//Obtenemos el nombre
+        const email = $("#email").val();//Obtenemos el email
+        const password = $("#password").val();//Obtenemos la contarseña 
         const confirmPassword = $("#confirm_password").val();
         if (password !== confirmPassword) {
             $("#confirmPasswordError").show().text("Las contraseñas deben coincidir.");
             return;
         }
+        const hashedPassword = CryptoJS.SHA256(password).toString(); //Realizamos el SH2
         
 
         $.ajax({
             type: "POST",
             url: "../php/signup.php", // Cambia esta ruta a la URL correcta de tu archivo PHP
-            data: $(this).serialize(),
+            data: { usuario: usuario, email:email , password: hashedPassword },
             dataType: "json",
             success: function(response) {
                 if (response.success) {

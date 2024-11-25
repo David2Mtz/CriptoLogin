@@ -17,7 +17,7 @@ use PHPMailer\PHPMailer\SMTP;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
     
 
     // Generar el token de verificación

@@ -12,8 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_id = $_SESSION['user_id'];
         $password = $_POST['password'];
 
-        // Cifrar la nueva contraseña antes de almacenarla
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
 
         // Actualizar la contraseña en la base de datos
         $sql = "UPDATE usuario SET Password = ?, Token_Password = NULL, Token_Password_Expiracion = NULL WHERE idUsuario = ?";
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        $stmt->bind_param("si", $hashed_password, $user_id);
+        $stmt->bind_param("si", $password, $user_id);
 
         if ($stmt->execute()) {
             echo json_encode(["message" => "Contraseña actualizada correctamente."]);

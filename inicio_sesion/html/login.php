@@ -109,7 +109,8 @@ $client->addScope("profile");
       </div>
     </div>
 
-  
+  <!-- Incluye CryptoJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script><!--Esta libreria incluye el SH2-->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

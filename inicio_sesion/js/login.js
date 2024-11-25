@@ -28,12 +28,12 @@ $(document).ready(()=>{
         // Obtiene los datos del formulario
         const usuario = $("#usuario").val();
         const password = $("#password").val();
-
+        const hashedPassword = CryptoJS.SHA256(password).toString(); //Realizamos el SH2
         // Realiza la solicitud AJAX
         $.ajax({
             type: "POST",
             url: "../php/login1.php",
-            data: { usuario: usuario, password: password },
+            data: { usuario: usuario, password: hashedPassword },
             dataType: "json",
             success: function (response) {
                 if (response.error) {
