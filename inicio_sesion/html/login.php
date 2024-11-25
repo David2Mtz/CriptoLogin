@@ -36,7 +36,7 @@ $client->addScope("profile");
           
               <div class="form-group w-100">
                   <label for="usuario" class="form-label">Usuario</label>
-                  <input type="text" id="usuario" class="form-control form-input w-100" placeholder="Ingresa tu correo aquí" required>
+                  <input type="text" id="usuario" class="form-control form-input w-100" placeholder="Ingresa tu usuario aquí" required>
               </div>
           
               <div class="form-group w-100 mb-2">
