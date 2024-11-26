@@ -244,16 +244,8 @@ a, .btn{
 .btn-primary{
     background-color:#BD6085;
     border: none;
-    width: 50%;
-    margin-top: 2rem;
-    height: 3.8rem;
-
-    font-size:x-large;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 70%;
+    font-size: large;
 }
 
 .btn-primary:hover{
@@ -323,4 +315,14 @@ a, .btn{
 
 .container{
     margin-bottom: 4rem;
+}
+.botonPdf{
+    font-size:x-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top: 2rem;
+    height: 3.8rem;
 }
