@@ -11,11 +11,11 @@ var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
           spaceBetween: 10,
       },
-      640: { // Tabletas
+      768: { // Tabletas
           slidesPerView: 2,
           spaceBetween: 20,
       },
-      1024: { // Pantallas medianas en adelante
+      1326: { // Pantallas medianas en adelante
           slidesPerView: 3,
           spaceBetween: 30,
       }

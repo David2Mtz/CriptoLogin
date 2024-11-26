@@ -196,6 +196,7 @@ a, .btn{
 }
 .swiper {
     height: 50rem;
+    
 }
 
 .swiper-slide {
@@ -208,6 +209,7 @@ a, .btn{
     margin-top: 15px;
     margin-bottom: 15px;
     border:none;
+    padding: 0.5rem;
 }
   /* Estilos generales para el contenedor */
 .review-card {
@@ -256,26 +258,58 @@ a, .btn{
     flex-direction: column;
 }
 
-.imgNota1{
-    background-image: url(../img/Enigma.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-    height: 200px; /* Asegúrate de darle altura */
-    flex-grow: 1;
-}
 .textNOTA{
     text-align: justify;
     font-size: larger;
     padding: 2rem;
+    padding-bottom: 0;
     margin-bottom: 2rem;
-    flex-grow: 3;
+    margin-left: 0rem;
 }
 
 .textp{
     text-align: justify;
     font-size: larger;
     padding: 2rem;
+    padding-top: 0;
     margin-bottom: 2rem;
     flex-grow: 3;
+}
+
+.img-container{
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    margin-right: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nota2{
+    height: 90%;
+    object-fit: cover;
+    margin-left: -1rem;
+}
+
+.imagenNota{
+    border-radius: 1rem;
+    box-shadow: 0 8px 12px #666;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.imagenNota:hover{
+    transform: translateY(-5px);
+}
+
+@media (min-width: 768px) {
+    .card-title{
+        font-size: 18px;
+    }
+}
+@media (min-width: 890px) {
+    .card-title{
+        font-size: 21px;
+    }
 }

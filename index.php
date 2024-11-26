@@ -178,17 +178,7 @@ $conn->close();
                 <div class="swiper-wrapper col-sm-10">
                     <div class="swiper-slide">
                         <div class="review-card">
-                            <img class="card-img-top" src="./img/n1.jpg" alt="">
-                            <div class="card-body">
-                                <div class="card-title m-4">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
-                                <div class="card-text mb-4">El cifrado RSA, desarrollado en 1977, revolucionó la criptografía al introducir la clave pública, permitiendo comunicaciones seguras en redes abiertas.</div>
-                                <a href="./noticias/html/nota1.html" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <img class="card-img-top" src="./img/n1.jpg" alt="">
+                            <img class="card-img-top" src="./img/enigma2.jpg" alt="">
                             <div class="card-body">
                                 <div class="card-title m-4">La Máquina Enigma: El Rompecódigos que Cambió el Curso de la Historia
                                 </div>
@@ -199,11 +189,21 @@ $conn->close();
                     </div>
                     <div class="swiper-slide">
                         <div class="review-card">
-                            <img class="card-img-top" src="./img/n1.jpg" alt="">
+                            <img class="card-img-top" src="./img/N2.png" alt="">
+                            <div class="card-body">
+                                <div class="card-title m-4">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
+                                <div class="card-text mb-4">El cifrado RSA, desarrollado en 1977, revolucionó la criptografía al introducir la clave pública, permitiendo comunicaciones seguras en redes abiertas.</div>
+                                <a href="./noticias/html/nota2.html" class="btn btn-primary">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <img class="card-img-top" src="./img/N3.webp" alt="">
                             <div class="card-body">
                                 <div class="card-title m-4">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</div>
                                 <div class="card-text mb-4">Durante la Guerra Fría, la criptografía jugó un papel crucial en el espionaje, especialmente en la interceptación y descifrado de comunicaciones confidenciales.</div>
-                                <a href="#" class="btn btn-primary">Ver</a>
+                                <a href="./noticias/html/nota3.html" class="btn btn-primary">Ver</a>
                             </div>
                         </div>
                     </div>

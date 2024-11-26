@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo 404</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Nota1</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="icon" href="inimgs/pest.png" type="image/x-icon">
-    <link rel="stylesheet" href="./navbar/css/navbar.css">
+    <link rel="stylesheet" href="../../navbar/css/navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
 </head>
-
 <body>
     <header>
         <!-- Barra de menú -->
@@ -21,10 +17,10 @@
             <div class="sub-izq">
                 <!--Botón de hamburguesa-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                    <img src="./inimgs/menu.png" alt="Menú">
+                    <img src="../../inimgs/menu.png" alt="Menú">
                 </button>
                 <a href="index.php" class="logo">
-                    <img src="./inimgs/logo.png" class="menu-icono" alt="Logo">
+                    <img src="../../inimgs/logo.png" class="menu-icono" alt="Logo">
                 </a>
                 <h1>Turismo 404</h1>
             </div>
@@ -43,15 +39,15 @@
 
             <!-- Iconos -->
             <div class="submenu">
-                <img src="./inimgs/notif.png" alt="Notificaciones" class="notif-icon" onclick="toggleNotifications()">
+                <img src="../../inimgs/notif.png" alt="Notificaciones" class="notif-icon" onclick="toggleNotifications()">
                 <a href="clima/clima.html">
-                    <img src="./inimgs/clima.png" alt="Clima">
+                    <img src="../../inimgs/clima.png" alt="Clima">
                 </a>
                 <a href="./editarperfil/php/editarperfil.php">
-                    <img src="./inimgs/user.png" alt="Usuario" class="menu-iconoUs">
+                    <img src="../../inimgs/user.png" alt="Usuario" class="menu-iconoUs">
                 </a>
-                <a href="./php/cerrar_sesion.php">
-                    <img src="./inimgs/cerrar.png" alt="cerrar">
+                <a href="../../php/cerrar_sesion.php">
+                    <img src="../../inimgs/cerrar.png" alt="cerrar">
                 </a>
             </div>
 
@@ -122,96 +118,33 @@
             </div>
         </div>
     </header>
+    <main>
+        <div class="container sombra w-75 mt-5">
+            <div class="">
+                <h2 class="m-2 mb-4 text-center">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</h2>
+                <div class="row w-100 m-0 d-flex">
+                    <div class="col-lg-5 col-sm-12 img-container">
+                        <img src="../../img/N3.webp" alt="" class="img-fluid imagenNota Nota2">
+                    </div>
+                    <p class="textNOTA col-lg-7 col-sm-12 ms-auto">
+                        Durante la Guerra Fría, la criptografía se convirtió en un elemento central en el espionaje, desempeñando un papel esencial tanto en la defensa de secretos nacionales como en la intercepción de información clasificada de las potencias opuestas. En un periodo marcado por la tensión entre Estados Unidos y la Unión Soviética, la capacidad de cifrar y descifrar comunicaciones estratégicas determinó en gran medida la eficacia de las operaciones de inteligencia y contrainteligencia.
 
-    <!-- Saludo al usuario -->
-    <div class="saludo-usuario contenedor">
-        <h2>¡Hola, <?php echo htmlspecialchars($nombre_usuario); ?>!</h2>
-    </div>
-
-    <section class="container-sm mt-4 imgviaje sombra w-75">
-        <div class="contenidoViajeNuevo">
-            <h1 class="text-center textoIndex p-2">La criptografía es la disciplina que estudia y aplica técnicas para proteger la información, asegurando su confidencialidad, integridad, autenticidad y disponibilidad.</h1>
-        </div>
-    </section>
-    <!-- Recomendados -->
-    <section class="container-sm w-75">
-        <h2>Recomendado</h2>
-        <div class="recomendados container-sm w-100">
-            <!-- Swiper -->
-            <div class="swiper mySwiper justify-content-evenly">
-                <div class="swiper-button-next col-sm-1"></div>
-                <div class="swiper-button-prev col-sm-1"></div>
-                <div class="swiper-wrapper col-sm-10">
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <img class="card-img-top" src="./img/enigma2.jpg" alt="">
-                            <div class="card-body">
-                                <div class="card-title m-4">La Máquina Enigma: El Rompecódigos que Cambió el Curso de la Historia
-                                </div>
-                                <div class="card-text mb-4">La Máquina Enigma fue un dispositivo de cifrado usado por Alemania en la Segunda Guerra Mundial. Su código, considerado irrompible, fue descifrado por los aliados, marcando un punto clave en la guerra.</div>
-                                <a href="./noticias/html/nota1.html" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <img class="card-img-top" src="./img/N2.png" alt="">
-                            <div class="card-body">
-                                <div class="card-title m-4">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
-                                <div class="card-text mb-4">El cifrado RSA, desarrollado en 1977, revolucionó la criptografía al introducir la clave pública, permitiendo comunicaciones seguras en redes abiertas.</div>
-                                <a href="./noticias/html/nota2.html" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <img class="card-img-top" src="./img/N3.webp" alt="">
-                            <div class="card-body">
-                                <div class="card-title m-4">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</div>
-                                <div class="card-text mb-4">Durante la Guerra Fría, la criptografía jugó un papel crucial en el espionaje, especialmente en la interceptación y descifrado de comunicaciones confidenciales.</div>
-                                <a href="./noticias/html/nota3.html" class="btn btn-primary">Ver</a>
-                            </div>
-                        </div>
-                    </div>
+                        <br><br>Uno de los dispositivos emblemáticos de esta época fue la máquina Sigaba, utilizada por Estados Unidos para cifrar sus mensajes. Este dispositivo era mucho más avanzado que la Máquina Enigma alemana, ya que incorporaba rotores adicionales y un diseño que evitaba patrones repetitivos, lo que la hacía prácticamente invulnerable a los ataques de criptoanálisis de la época. Mientras tanto, los sistemas soviéticos presentaban vulnerabilidades que fueron aprovechadas por los programas de inteligencia de Occidente.
+                    </p>
                 </div>
-                
+                <p class="textp">
+                    El Proyecto VENONA, un esfuerzo conjunto entre Estados Unidos y el Reino Unido, es un ejemplo notable de cómo la criptografía influyó en el espionaje durante este periodo. Entre 1943 y 1980, analistas estadounidenses y británicos trabajaron en descifrar miles de mensajes enviados por la inteligencia soviética. Estos mensajes, cifrados con sistemas de clave única reutilizados accidentalmente por los soviéticos, revelaron detalles de una extensa red de espías en Occidente, incluyendo información sobre el espionaje nuclear. VENONA permitió identificar a agentes dobles, como Julius y Ethel Rosenberg, y expuso operaciones encubiertas que habrían permanecido ocultas sin el descifrado exitoso de estos mensajes.
+
+La criptografía también se usó como herramienta defensiva para proteger comunicaciones críticas entre líderes y comandos militares. Por ejemplo, Estados Unidos desarrolló sistemas avanzados para proteger sus redes, asegurándose de que sus estrategias no fueran comprometidas por la Unión Soviética. Paralelamente, ambas potencias invirtieron recursos significativos en entrenar criptoanalistas y desarrollar métodos para romper los sistemas del adversario.
+
+Más allá de las operaciones tácticas, la criptografía simbolizó el conflicto ideológico de la Guerra Fría: era una lucha por el control de la información en un mundo cada vez más interconectado. Este periodo marcó un antes y un después en la historia de la criptografía, consolidándola como un arma estratégica en los conflictos internacionales. A medida que las tensiones geopolíticas evolucionaron, las lecciones aprendidas durante la Guerra Fría sentaron las bases para los sistemas criptográficos modernos que hoy protegen nuestras comunicaciones digitales.
+                </p>
             </div>
-        </div>
-    </section>
+            <div class="d-flex justify-content-center">
+                <a href="" class="btn btn-primary text-center">Descargar pdf</a>
+            </div>
 
-    <footer class="footer">
-    <!-- Redes Sociales -->
-    <div class="footer-social">
-        <a href="#"><img src="./inimgs/ig.png" alt="Instagram"></a>
-        <a href="#"><img src="./inimgs/fb.png" alt="Facebook"></a>
-        <a href="#"><img src="./inimgs/x.png" alt="X"></a>
-    </div>
-
-    <!-- Sección de Enlaces -->
-    <div class="footer-content">
-        <div class="footer-column">
-            <p>Correo: admin404@turismo.com</p>
-            <p>Teléfono: +52 5512345674</p>
         </div>
-        <div class="footer-column">
-            <img src="./inimgs/logo.png" alt="Logo" class="footer-logo">
-        </div>
-        <div class="footer-column">
-            <a href="faq.html">Preguntas frecuentes</a>
-            <a href="itinerarios.html">Mis itinerarios</a>
-        </div>
-    </div>
-
-    <!-- Hasta abajo -->
-    <div class="footer-copyright">
-        <p>&copy; Copyright: Turismo404</p>
-    </div>
-    </footer>
-
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./navbar/js/navbar.js"></script>
-    <script src="js/script.js"></script>
+    </main>
 </body>
 </html>
