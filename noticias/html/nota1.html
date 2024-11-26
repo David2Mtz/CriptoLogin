@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota1</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../../navbar/css/navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Barra de menú -->
+        <div class="menu conta">
+            <div class="sub-izq">
+                <!--Botón de hamburguesa-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <img src="../../inimgs/menu.png" alt="Menú">
+                </button>
+                <a href="index.php" class="logo">
+                    <img src="../../inimgs/logo.png" class="menu-icono" alt="Logo">
+                </a>
+                <h1>Turismo 404</h1>
+            </div>
+
+            <!-- Barra de búsqueda-->
+            <div class="input-group busqueda">
+                <input class="form-control" type="search" placeholder="Búsqueda" aria-label="Search">
+                <button class="btn btn-light" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Iconos -->
+            <div class="submenu">
+                <img src="../../inimgs/notif.png" alt="Notificaciones" class="notif-icon" onclick="toggleNotifications()">
+                <a href="clima/clima.html">
+                    <img src="../../inimgs/clima.png" alt="Clima">
+                </a>
+                <a href="./editarperfil/php/editarperfil.php">
+                    <img src="../../inimgs/user.png" alt="Usuario" class="menu-iconoUs">
+                </a>
+                <a href="../../php/cerrar_sesion.php">
+                    <img src="../../inimgs/cerrar.png" alt="cerrar">
+                </a>
+            </div>
+
+            <!--Cuadro de notificaciones-->
+            <div id="notifications" class="notifications-dropdown">
+                <ul>
+                    <li><span>Tu itinerario está pendiente.</span></li>
+                    <li><span>¡Recuerda configurar tus preferencias!</span></li>
+                </ul>
+                <button class="btn-notif" onclick="window.location.href='notificaciones/notificaciones.html';">Ver todas</button>
+            </div>
+
+            <!-- Desplegable -->
+            <div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">MENÚ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="favoritos.html">
+                                <img src="./inimgs/star.png" alt="Favoritos" class="icon"> 
+                                <div class="text-container">
+                                    <span class="item-title">Favoritos</span>
+                                    <span class="item-subtitle">Revisa tus lugares favoritos</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./historial/historial.html">
+                                <img src="./inimgs/clock.png" alt="Historial" class="icon"> 
+                                <div class="text-container">
+                                    <span class="item-title">Historial</span>
+                                    <span class="item-subtitle">Historial de itinerarios creados</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./editarperfil/php/editarperfil.php">
+                                <img src="./inimgs/edituser.png" alt="Editar cuenta" class="icon"> 
+                                <div class="text-container">
+                                    <span class="item-title">Editar cuenta</span>
+                                    <span class="item-subtitle">Edita detalles de tu cuenta</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./formulario/html/Formulario.html">
+                                <img src="./inimgs/add.png" alt="Crear itinerario" class="icon"> 
+                                <div class="text-container">
+                                    <span class="item-title">Crear itinerario</span>
+                                    <span class="item-subtitle">Crea un nuevo itinerario</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="logout.html">
+                                <img src="./inimgs/logout.png" alt="Cerrar sesión" class="icon"> 
+                                <div class="text-container">
+                                    <span class="item-title">Cerrar sesión</span>
+                                    <span class="item-subtitle">Salir de la cuenta</span>
+                                </div>
+                            </a>
+                        </li>                                
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container sombra w-75 mt-5">
+            <div class="">
+                <h2 class="m-2 mb-4">La Máquina Enigma: El Rompecódigos que Cambió el Curso de la Historia</h2>
+                <div class="cajaNota row w-100 m-0">
+                    <div class="imgNota1 col-4"></div>
+                    <p class="textNOTA col-8">
+                        La Máquina Enigma fue uno de los dispositivos de cifrado más avanzados y cruciales durante la Segunda Guerra Mundial, empleado principalmente por las fuerzas armadas alemanas para proteger sus comunicaciones. Diseñada inicialmente por el ingeniero alemán Arthur Scherbius en 1918, esta máquina de cifrado electromecánica funcionaba mediante un sistema de rotores intercambiables que generaban permutaciones complejas de letras, asegurando un cifrado aparentemente indescifrable.
+        
+                        El mecanismo de la Enigma consistía en varias partes clave: un teclado, un conjunto de rotores giratorios, un reflector y un panel de conexiones. Cada vez que una letra se presionaba, los rotores giraban, cambiando la correspondencia entre las letras de entrada y las letras cifradas. Este sistema, combinado con la configuración diaria de los rotores y el panel de conexiones, generaba un número astronómico de combinaciones posibles, lo que dificultaba enormemente su descifrado sin conocer la configuración exacta.
+                    </p>
+                </div>
+                <p class="textp">
+                    Sin embargo, su invulnerabilidad fue desafiada incluso antes de la Segunda Guerra Mundial. A principios de los años 30, un equipo de matemáticos polacos liderado por Marian Rejewski logró comprender el principio operativo de la Enigma y desarrolló herramientas para descifrar mensajes. Su trabajo fue compartido con los aliados poco antes de la invasión alemana a Polonia.
+        
+                        El esfuerzo decisivo para romper los códigos de Enigma tuvo lugar en Bletchley Park, Inglaterra. Allí, un grupo de criptoanalistas, entre los que destacaba Alan Turing, desarrolló dispositivos como la "Bombe", una máquina electromecánica diseñada específicamente para descifrar los códigos generados por la Enigma. Este avance permitió interceptar y descifrar mensajes clave, lo que dio a los aliados una ventaja estratégica significativa.
+        
+                        La contribución del descifrado de Enigma no solo redujo la duración de la guerra, sino que también marcó un antes y un después en el campo de la criptografía y la computación. El trabajo de Turing y su equipo sentó las bases para el desarrollo de las primeras computadoras digitales y dio inicio a una nueva era en la seguridad de la información.
+        
+                        La historia de la Máquina Enigma es un recordatorio poderoso de cómo la inteligencia, la innovación y la colaboración pueden cambiar el curso de la historia.
+                        
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="" class="btn btn-primary text-center">Descargar pdf</a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

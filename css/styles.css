@@ -195,7 +195,7 @@ a, .btn{
     color:#A13C64; /* Cambia el color al que prefieras */
 }
 .swiper {
-    height: 10rem;
+    height: 50rem;
 }
 
 .swiper-slide {
@@ -226,40 +226,56 @@ a, .btn{
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
 }
 
-/* Estilo para las estrellas */
-.stars {
-    color: #FFD700;
-    font-size: 20px;
+.textoIndex{
+    color: white;
 }
-
-/* Estilo para el nombre del hotel */
-.hotel-name {
-    font-size: 20px;
+.card-title{
     font-weight: bold;
-    margin-top: 8px;
+    font-size: larger;
+    height: 8rem;
 }
 
-/* Estilo para el cuerpo de la reseña */
-.review-body {
-    color: #555;
-    margin-top: 8px;
-    font-size: 14px;
+.card-text{
+    text-align:justify;
+    text-wrap:wrap;
+    height: 12rem;
 }
 
-/* Contenedor de la información del revisor */
-.reviewer-info {
-    display: flex;
-    align-items: center;
-    margin-top: 16px;
-    font-size: 12px;
-    color: #777;
+.btn-primary{
+    background-color:#BD6085;
+    border: none;
+    width: 75%;
 }
 
-/* Estilo para la imagen del revisor */
-.reviewer-info img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 8px;
+.btn-primary:hover{
+    background-color:#D196A3;
+    border: none;
 }
 
+.cajaNota{
+    flex-direction: column;
+}
+
+.imgNota1{
+    background-image: url(../img/Enigma.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    height: 200px; /* Asegúrate de darle altura */
+    flex-grow: 1;
+}
+.textNOTA{
+    text-align: justify;
+    font-size: larger;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    flex-grow: 3;
+}
+
+.textp{
+    text-align: justify;
+    font-size: larger;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    flex-grow: 3;
+}

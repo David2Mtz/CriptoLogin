@@ -164,7 +164,7 @@ $conn->close();
 
     <section class="container-sm mt-4 imgviaje sombra w-75">
         <div class="contenidoViajeNuevo">
-            <a class="btn btn-viaje" href="formulario/html/Formulario.html">Nuevo Viaje</a>
+            <h1 class="text-center textoIndex p-2">La criptografía es la disciplina que estudia y aplica técnicas para proteger la información, asegurando su confidencialidad, integridad, autenticidad y disponibilidad.</h1>
         </div>
     </section>
     <!-- Recomendados -->
@@ -177,128 +177,33 @@ $conn->close();
                 <div class="swiper-button-prev col-sm-1"></div>
                 <div class="swiper-wrapper col-sm-10">
                     <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
+                        <div class="review-card">
+                            <img class="card-img-top" src="./img/n1.jpg" alt="">
+                            <div class="card-body">
+                                <div class="card-title m-4">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
+                                <div class="card-text mb-4">El cifrado RSA, desarrollado en 1977, revolucionó la criptografía al introducir la clave pública, permitiendo comunicaciones seguras en redes abiertas.</div>
+                                <a href="./noticias/html/nota1.html" class="btn btn-primary">Ver</a>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
+                        <div class="review-card">
+                            <img class="card-img-top" src="./img/n1.jpg" alt="">
+                            <div class="card-body">
+                                <div class="card-title m-4">La Máquina Enigma: El Rompecódigos que Cambió el Curso de la Historia
                                 </div>
+                                <div class="card-text mb-4">La Máquina Enigma fue un dispositivo de cifrado usado por Alemania en la Segunda Guerra Mundial. Su código, considerado irrompible, fue descifrado por los aliados, marcando un punto clave en la guerra.</div>
+                                <a href="./noticias/html/nota1.html" class="btn btn-primary">Ver</a>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-card" onclick="location.href='itinerario/html/infolugar.html'">
-                            <div class="stars">★★★★★</div>
-                            <div class="hotel-name">Hotel CasaNova</div>
-                            <div class="review-body">Review body</div>
-                            <div class="reviewer-info">
-                                <img src="https://via.placeholder.com/32" alt="Reviewer">
-                                <div>
-                                    <div class="reviewer-name">Reviewer name</div>
-                                    <div class="review-date">Date</div>
-                                </div>
+                        <div class="review-card">
+                            <img class="card-img-top" src="./img/n1.jpg" alt="">
+                            <div class="card-body">
+                                <div class="card-title m-4">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</div>
+                                <div class="card-text mb-4">Durante la Guerra Fría, la criptografía jugó un papel crucial en el espionaje, especialmente en la interceptación y descifrado de comunicaciones confidenciales.</div>
+                                <a href="#" class="btn btn-primary">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -306,52 +211,6 @@ $conn->close();
                 
             </div>
         </div>
-    </section>
-    
-    <section class="container mb-5 mt-4 w-75">
-        <div>
-            <h2>Historial de Itinerarios</h2>
-            <p>Aquí están los planes de viajes creados anteriormente.</p>
-        </div>
-        <div class="container-fluid">
-            <div class="d-flex row gap-4">
-                <div class="col-lg-3 card">
-                    <div class="contImagen">
-                        <img src="./img/card1.jpg" class="card-img-top" alt="...">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">Bares en Zacatenco</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="historial/itinerantes.html" class="btn  btnColor">Go somewhere</a>
-                    </div>
-                </div>
-                <div class=" col-lg-3 card">
-                    <div class="contImagen">
-                        <img src="./img/card2.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Veracruz</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="historial/itinerantes.html" class="btn  btnColor">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 card">
-                    <div class="contImagen">
-                        <img src="./img/card4.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Museos en CDMX</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="historial/itinerantes.html" class="btn  btnColor">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="col-lg-2 align-content-center">
-                    <a class="boton-historial" href="historial/historial.html">Ver todo</a>
-                </div>
-            </div>
-        </div>
-        
     </section>
 
     <footer class="footer">
