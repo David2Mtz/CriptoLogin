@@ -223,14 +223,32 @@ a, .btn{
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
 }
 
-.textoIndex{
-    color: white;
-}
+/* Estilo para el contenedor */
+.textoIndex {
+    color: #fff;
+    font-size: 24px; /* Tamaño de texto */
+    white-space: nowrap; /* Evita que el texto se rompa */
+    overflow: hidden; /* Oculta el texto que no ha sido escrito aún */
+    border-right: 3px solid black; /* Simula el cursor de la máquina de escribir */
+    width: 0; /* Empieza con el texto oculto */
+    animation: escribir 5s steps(50) 1s forwards; /* Animación de escritura */
+    
+  }
+  
+  /* Definimos la animación */
+  @keyframes escribir {
+    to {
+      width: 100%; /* Al final, el texto completo es visible */
+      border-right: none;
+    }
+  }
+
 .card-title{
     font-weight: bold;
     font-size: larger;
     height: 8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
 }
 
 .card-text{
@@ -238,7 +256,7 @@ a, .btn{
     text-wrap:wrap;
     height: 12rem;
     font-size: 17px;
-    margin-top: 3rem;
+    margin-top: 0rem;
 }
 
 .btn-primary{
