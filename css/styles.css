@@ -194,11 +194,6 @@ a, .btn{
 .swiper-button-prev::after {
     color:#A13C64; /* Cambia el color al que prefieras */
 }
-.swiper {
-    height: 50rem;
-    
-}
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -235,18 +230,30 @@ a, .btn{
     font-weight: bold;
     font-size: larger;
     height: 8rem;
+    margin-bottom: 2rem;
 }
 
 .card-text{
     text-align:justify;
     text-wrap:wrap;
     height: 12rem;
+    font-size: 17px;
+    margin-top: 3rem;
 }
 
 .btn-primary{
     background-color:#BD6085;
     border: none;
-    width: 75%;
+    width: 50%;
+    margin-top: 2rem;
+    height: 3.8rem;
+
+    font-size:x-large;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-primary:hover{
@@ -272,8 +279,8 @@ a, .btn{
     font-size: larger;
     padding: 2rem;
     padding-top: 0;
-    margin-bottom: 2rem;
-    flex-grow: 3;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
 }
 
 .img-container{
@@ -312,4 +319,8 @@ a, .btn{
     .card-title{
         font-size: 21px;
     }
+}
+
+.container{
+    margin-bottom: 4rem;
 }
