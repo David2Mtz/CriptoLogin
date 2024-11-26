@@ -32,7 +32,7 @@ if (isset($_GET['token'])) {
                 echo json_encode(["error" => "El enlace de recuperación ha expirado. Solicita uno nuevo."]);
             }
         } else {
-            echo json_encode(["error" => "Token inválido"]);
+            echo json_encode(["error" => "El enlace de recuperación ha expirado. Solicita uno nuevo."]);
         }
     }
 ?>
