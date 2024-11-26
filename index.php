@@ -164,7 +164,8 @@ $conn->close();
 
     <section class="container-sm mt-4 imgviaje sombra w-75">
         <div class="contenidoViajeNuevo">
-            <h1 class="text-center textoIndex p-2">La criptografía es la disciplina que estudia y aplica técnicas para proteger la información, asegurando su confidencialidad, integridad, autenticidad y disponibilidad.</h1>
+            <h1 class="text-center textoIndex p-2">La criptografía es la disciplina que estudia y aplica 
+                <br>técnicas para proteger la información.</h1>
         </div>
     </section>
     <!-- Recomendados -->
@@ -180,7 +181,7 @@ $conn->close();
                         <div class="review-card">
                             <img class="card-img-top" src="./img/enigma2.jpg" alt="">
                             <div class="card-body">
-                                <div class="card-title m-4">La Máquina Enigma: El Rompecódigos que Cambió el Curso de la Historia
+                                <div class="card-title">La Máquina Enigma: El Rompe-códigos que Cambió el Curso de la Historia
                                 </div>
                                 <div class="card-text mb-4">La Máquina Enigma fue un dispositivo de cifrado usado por Alemania en la Segunda Guerra Mundial. Su código, considerado irrompible, fue descifrado por los aliados, marcando un punto clave en la guerra.</div>
                                 <a href="./noticias/html/nota1.html" class="btn btn-primary">Ver</a>
@@ -191,7 +192,7 @@ $conn->close();
                         <div class="review-card">
                             <img class="card-img-top" src="./img/N2.png" alt="">
                             <div class="card-body">
-                                <div class="card-title m-4">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
+                                <div class="card-title">RSA: El Algoritmo que Transformó la Seguridad Digital</div>
                                 <div class="card-text mb-4">El cifrado RSA, desarrollado en 1977, revolucionó la criptografía al introducir la clave pública, permitiendo comunicaciones seguras en redes abiertas.</div>
                                 <a href="./noticias/html/nota2.html" class="btn btn-primary">Ver</a>
                             </div>
@@ -201,10 +202,10 @@ $conn->close();
                         <div class="review-card">
                             <img class="card-img-top" src="./img/N3.webp" alt="">
                             <div class="card-body">
-                                <div class="card-title m-4">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</div>
+                                <div class="card-title">El Impacto de la Criptografía en el Espionaje: Caso de la Guerra Fría</div>
                                 <div class="card-text mb-4">Durante la Guerra Fría, la criptografía jugó un papel crucial en el espionaje, especialmente en la interceptación y descifrado de comunicaciones confidenciales.</div>
-                                <a href="./noticias/html/nota3.html" class="btn btn-primary">Ver</a>
                             </div>
+                            <a href="./noticias/html/nota3.html" class="btn btn-primary">Ver</a>
                         </div>
                     </div>
                 </div>
