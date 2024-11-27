@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `Usuario` VARCHAR(50) NOT NULL,
   `Correo` VARCHAR(45) NOT NULL,
   `Password` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`idUsuario`),
   UNIQUE INDEX `Corre_UNIQUE` (`Correo` ASC),  -- El email debe ser único
   UNIQUE INDEX `Usuario_UNIQUE` (`Usuario` ASC) -- El nombre de usuario también único
 )
