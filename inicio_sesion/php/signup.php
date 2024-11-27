@@ -99,7 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo json_encode(["error" => "El correo no pudo ser enviado. Error: " . $mail->ErrorInfo]);
             }
         } else {
-            echo json_encode(["error" => "Error al registrar usuario, por favor, verifique los datos ingresados."]);
+            // Manejo del error al ejecutar la consulta
+            if (strpos($stmt_insert->error, "Duplicate entry") !== false) {
+                if (strpos($stmt_insert->error, "for key 'usuario.Correo'") !== false) {
+                    echo json_encode(["error" => "El correo ingresado ya pertenece a una cuenta, por favor, verifique los datos."]);
+                } else if (strpos($stmt_insert->error, "for key 'usuario.Usuario'") !== false){
+                    echo json_encode(["error" => "El usuario ingresado ya está registrado, intente con otro nombre."]);
+                }
+            }else {
+                echo json_encode(["error" => "Error al registrar usuario, por favor, intente más tarde."]);
+            }
         }
         
         $stmt_insert->close();

@@ -118,7 +118,7 @@ $client->addScope("profile");
     </div>
 
     <!-- Modal Confirmacion -->
-    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -128,7 +128,9 @@ $client->addScope("profile");
             <div class="modal-body">
               <div class="row">
                 <div class="col-lg-8 d-lg-flex align-items-center">
-                    <p>Tu cuenta ha sido creada exitosamente. Ahora puedes iniciar sesión.</p>
+                    <div class="textError" id="successModalBody">
+  
+                    </div><!-- Mensaje de confirmacion-->
                 </div>
                 <div class="col-lg-4 ms-auto contSuccesImg">
                     <!-- Foto de mascota error -->
@@ -136,7 +138,7 @@ $client->addScope("profile");
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="btnSuccess" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>

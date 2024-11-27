@@ -4,7 +4,11 @@ function showErrorModal(message) {
     $("#exampleModal").modal("show"); // Muestra el modal
 }
   
-
+// Función para mostrar el modal con un mensaje personalizado de éxito
+function showSuccesModal(message) {
+    $("#successModalBody").text(message); // Inserta el mensaje en el párrafo específico
+    $("#successModal").modal("show"); // Muestra el modal de éxito
+}
 
 $(document).ready(function() {
     // Función para redirigir después de mostrar la confirmación
@@ -114,11 +118,13 @@ $(document).ready(function() {
             data: { usuario: usuario, email:email , password: hashedPassword },
             dataType: "json",
             success: function(response) {
-                if (response.success) {
+                if (response.message) {
+                    unshowLoadingModal(); 
+                    showSuccesModal(response.message);
+                    console.log(response.message);
                     
-                    showConfirmationModal();
-                    setTimeout(redirectToLogin, 3500); // Redirige después de 3 segundos
                 } else if (response.error) {
+                    
                     unshowLoadingModal();
                     showErrorModal(response.error);
                     console.log(response.error);
@@ -132,5 +138,8 @@ $(document).ready(function() {
                 showErrorModal("Ocurrió un error al enviar el formulario. Intente de nuevo.");
             }
         });
+    });
+    $('#btnSuccess').on('click',()=>{
+        window.location.href = '../html/login.php'
     });
 });
