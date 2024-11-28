@@ -1,14 +1,4 @@
-<?php
-require_once '../../vendor/autoload.php';
-require_once '../google/config_google.php';
 
-$client = new Google_Client();
-$client->setClientId($clientID);
-$client->setClientSecret($clientSecret);
-$client->setRedirectUri($redirectUri);
-$client->addScope("email");
-$client->addScope("profile");
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,17 +37,7 @@ $client->addScope("profile");
               <p class="forgot-password">¿Haz olvidado tu contraseña?</p>
               <a href="recuperar.html" class="forgot-password-link d-block mb-3">Haz click aquí</a>
           
-              <div class="text-center or-divider my-3 mb-3">- o -</div>
-              <div class="registrate">
-                
-
-                  <div class="d-flex align-items-center justify-content-center mb-4">
-                  <?php echo "<a href='" . $client->createAuthUrl() . "' class='google-login-button'>"; ?>
-                        <i class="fa-brands fa-google" style="color: #A13C64; font-size: 30px;"></i>
-                        <span class="or-divider ml-2"> Iniciar sesión con google</span>
-                      </a>
-                  </div>
-              </div>
+              
               
               <button type="submit" class="login-button btn btn-primary w-100">Iniciar sesión</button>
           </form>
